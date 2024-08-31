@@ -1,7 +1,6 @@
 const axios = require('axios');
 
-// Replace with your actual OpenWeatherMap API key
-const apiKey = '7d5c97a945ea40662e1fff090876e18f'; // <-- Insert your valid API key here
+const apiKey = 'YOUR_API_KEY_HERE';
 const baseUrl = 'http://api.openweathermap.org/data/2.5/weather';
 
 async function getWeather(city) {
@@ -25,6 +24,6 @@ async function getWeather(city) {
     }
 }
 
-// Replace 'London' with the city you want to fetch weather for
-const city = 'London';
+// Accept city name from command-line arguments
+const city = process.argv[2] || 'London'; // Default to 'London' if no argument provided
 getWeather(city);
